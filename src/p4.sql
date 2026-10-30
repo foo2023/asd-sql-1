@@ -12,7 +12,7 @@ BEGIN
 END //
 DELIMITER ;
 
-/*
+/* In linux Ubuntu (mysql)
 mysql> DELIMITER //
 mysql> CREATE PROCEDURE updatePricing(
     ->     IN p_product_id INT,
