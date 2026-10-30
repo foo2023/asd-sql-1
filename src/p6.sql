@@ -1,4 +1,5 @@
 -- Problem 6 - Retrieve Employees with High Salary
+-- With bonus implemented
 
 SELECT Emp_Name, Position, Salary
 FROM Employee
