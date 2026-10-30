@@ -39,6 +39,7 @@ CREATE TABLE Orders (
     customer_id INT NOT NULL,
     total_amount DECIMAL (10,2),
     FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
+        ON DELETE CASCADE -- when customer delete, record will be delete automatically
 );
 
 -- Customer ID can reference to Orders table.
@@ -49,7 +50,8 @@ CREATE TABLE Sale (
     quantity INT NOT NULL,
     sale_date DATE NOT NULL,
     PRIMARY KEY (order_id, product_id), -- composite PK
-    FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+        ON DELETE CASCADE, -- when record in order delete, record here will also delete
     FOREIGN KEY (product_id) REFERENCES Inventory(product_id)
 );
 
